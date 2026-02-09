@@ -20,6 +20,15 @@
   <button onclick="filterMenu('dessert', this)">Dessert</button>
 </nav>
 
+<div class="search-box">
+  <input 
+    type="text" 
+    id="searchInput" 
+    placeholder="🔍 Search menu..."
+    oninput="searchMenu(this.value)"
+  />
+</div>
+
 <main id="menu" class="menu"></main>
 
 <footer class="footer">
