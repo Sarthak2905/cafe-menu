@@ -107,3 +107,22 @@ body {
     grid-template-columns: repeat(4, 1fr);
   }
 }
+
+/* SEARCH BAR */
+.search-box {
+  padding: 12px;
+  background: #fff;
+}
+
+.search-box input {
+  width: 100%;
+  padding: 10px 14px;
+  border-radius: 25px;
+  border: 1px solid #ddd;
+  font-size: 0.9rem;
+  outline: none;
+}
+
+.search-box input:focus {
+  border-color: #6f4e37;
+}
