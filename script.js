@@ -12,8 +12,16 @@ const menuData = [
 ];
 
 const menu = document.getElementById("menu");
+const searchInput = document.getElementById("searchInput");
+
+let currentCategory = "all";
 
 function renderMenu(items) {
+  if (items.length === 0) {
+    menu.innerHTML = "<p style='grid-column:1/-1;text-align:center;'>No items found</p>";
+    return;
+  }
+
   menu.innerHTML = items.map(item => `
     <div class="card">
       <img src="${item.img}" loading="lazy" alt="${item.name}">
@@ -26,15 +34,37 @@ function renderMenu(items) {
 }
 
 function filterMenu(category, btn) {
+  currentCategory = category;
+
   document.querySelectorAll(".category button")
     .forEach(b => b.classList.remove("active"));
   btn.classList.add("active");
 
-  if (category === "all") {
-    renderMenu(menuData);
-  } else {
-    renderMenu(menuData.filter(item => item.category === category));
-  }
+  applyFilters();
 }
 
+function searchMenu(value) {
+  applyFilters();
+}
+
+function applyFilters() {
+  let filtered = menuData;
+
+  // category filter
+  if (currentCategory !== "all") {
+    filtered = filtered.filter(item => item.category === currentCategory);
+  }
+
+  // search filter
+  const searchText = searchInput.value.toLowerCase();
+  if (searchText) {
+    filtered = filtered.filter(item =>
+      item.name.toLowerCase().includes(searchText)
+    );
+  }
+
+  renderMenu(filtered);
+}
+
+// initial render
 renderMenu(menuData);
