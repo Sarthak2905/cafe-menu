@@ -17,11 +17,11 @@ const searchInput = document.getElementById("searchInput");
 let currentCategory = "all";
 
 function getCart() {
-  return JSON.parse(localStorage.getItem("cart")) || [];
+  return JSON.parse(sessionStorage.getItem("cart")) || [];
 }
 
 function saveCart(cart) {
-  localStorage.setItem("cart", JSON.stringify(cart));
+  sessionStorage.setItem("cart", JSON.stringify(cart));
 }
 
 function addToCart(item) {
@@ -113,8 +113,3 @@ function showToast(message, type = "success") {
     toast.className = "toast";
   }, 2500);
 }
-
-window.addEventListener("pageshow", function (event) {
-  updateCartCount();
-});
-
