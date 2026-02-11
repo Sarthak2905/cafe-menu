@@ -113,3 +113,8 @@ function showToast(message, type = "success") {
     toast.className = "toast";
   }, 2500);
 }
+
+window.addEventListener("pageshow", function (event) {
+  updateCartCount();
+});
+
