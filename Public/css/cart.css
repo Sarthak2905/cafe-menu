@@ -1,0 +1,191 @@
+/* ================= RESET ================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+/* ================= BODY ================= */
+body {
+  background: #fdf6ee; /* Warm cream */
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px;
+}
+
+/* ================= CONTAINER ================= */
+.container {
+  width: 100%;
+  max-width: 480px;
+}
+
+/* ================= HEADING ================= */
+h2 {
+  text-align: center;
+  margin-bottom: 22px;
+  font-size: 24px;
+  font-weight: 600;
+  color: #4b2e2b;
+}
+
+/* ================= CARD ================= */
+.card {
+  background: #fffaf5;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 10px 25px rgba(75, 46, 43, 0.15);
+  border: 1px solid #f1e3d3;
+}
+
+/* ================= BILL CONTAINER ================= */
+#bill {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid #f1e3d3;
+  box-shadow: inset 0 2px 6px rgba(75, 46, 43, 0.06);
+  max-height: 320px;
+  overflow-y: auto;
+}
+
+/* Scrollbar */
+#bill::-webkit-scrollbar {
+  width: 6px;
+}
+
+#bill::-webkit-scrollbar-thumb {
+  background: #c8a27c;
+  border-radius: 10px;
+}
+
+#bill::-webkit-scrollbar-track {
+  background: #fdf6ee;
+}
+
+/* ================= BILL ITEM ================= */
+.bill-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 0;
+  border-bottom: 1px dashed #e8d8c3;
+}
+
+.bill-item:last-child {
+  border-bottom: none;
+}
+
+/* ================= LEFT SIDE ================= */
+.item-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.item-name {
+  font-weight: 600;
+  color: #4b2e2b;
+  margin-bottom: 8px;
+  font-size: 15px;
+}
+
+/* ================= PRICE ================= */
+.item-price {
+  font-weight: 600;
+  font-size: 15px;
+  font-family: monospace;
+  color: #3b2a25;
+  min-width: 80px;
+  text-align: right;
+}
+
+/* ================= QTY CONTROLS ================= */
+.qty-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* + and - buttons */
+.qty-controls button {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  border: none;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+/* Increase & Decrease */
+.qty-controls button:not(.remove) {
+  background: #6f4e37;
+  color: white;
+}
+
+.qty-controls button:not(.remove):hover {
+  background: #5a3d2b;
+  transform: translateY(-1px);
+}
+
+/* Quantity Number */
+.qty-number {
+  min-width: 28px;
+  text-align: center;
+  font-weight: 600;
+  color: #4b2e2b;
+  font-size: 14px;
+}
+
+/* Remove Button */
+.qty-controls .remove {
+  background: #fff;
+  color: #b00020;
+  border: 1px solid #b00020;
+  width: auto;
+  padding: 0 10px;
+  font-size: 14px;
+}
+
+.qty-controls .remove:hover {
+  background: #b00020;
+  color: white;
+}
+
+/* ================= TOTAL SECTION ================= */
+.row.total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 16px;
+  border-top: 2px solid #d2b48c;
+  font-size: 17px;
+  font-weight: 600;
+  color: #4b2e2b;
+}
+
+#total {
+  font-size: 19px;
+  font-family: monospace;
+  color: #8b4513;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (min-width: 768px) {
+  .card {
+    padding: 30px;
+  }
+
+  .item-name,
+  .item-price {
+    font-size: 17px;
+  }
+
+  .row.total {
+    font-size: 19px;
+  }
+}

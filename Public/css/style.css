@@ -1,0 +1,213 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: #fdf6ee; /* Cream background */
+  color: #4b2e2b;
+  padding-bottom: 90px; /* Space for cart button */
+}
+
+/* Header */
+.header {
+  text-align: center;
+  padding: 20px 16px;
+  background: #fffaf5;
+  border-bottom: 1px solid #f1e3d3;
+  box-shadow: 0 4px 10px rgba(75, 46, 43, 0.08);
+}
+
+.header h1 {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.header p {
+  font-size: 14px;
+  color: #8b6f60;
+}
+
+/* Category Buttons */
+.category {
+  display: flex;
+  gap: 10px;
+  padding: 14px;
+  overflow-x: auto;
+  background: #fdf6ee;
+}
+
+.category button {
+  padding: 8px 16px;
+  border-radius: 20px;
+  border: 1px solid #e8d8c3;
+  background: #fffaf5;
+  color: #5c3d2e;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: 0.3s ease;
+}
+
+.category button.active {
+  background: #6f4e37;
+  color: white;
+  border: none;
+}
+
+.category button:hover {
+  background: #d2b48c;
+  color: white;
+}
+
+/* Search Box */
+.search-box {
+  padding: 0 14px 14px;
+}
+
+.search-box input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 25px;
+  border: 1px solid #e8d8c3;
+  background: #fff;
+  outline: none;
+  font-size: 14px;
+}
+
+.search-box input:focus {
+  border-color: #6f4e37;
+  box-shadow: 0 0 0 2px rgba(111, 78, 55, 0.15);
+}
+
+/* Menu Grid */
+.menu {
+  padding: 14px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+/* Card */
+.card {
+  background: #fffaf5;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid #f1e3d3;
+  box-shadow: 0 6px 14px rgba(75, 46, 43, 0.1);
+  transition: 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+}
+
+/* Image */
+.card img {
+  width: 100%;
+  height: 130px;
+  object-fit: cover;
+}
+
+/* Card Body */
+.card-body {
+  padding: 12px;
+}
+
+.card-body h3 {
+  font-size: 14px;
+  margin-bottom: 6px;
+}
+
+.card-body p {
+  font-size: 13px;
+  color: #8b6f60;
+  margin-bottom: 8px;
+}
+
+/* Price */
+.card-body .price {
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #3b2a25;
+}
+
+/* Add to Cart Button */
+.card-body button {
+  width: 100%;
+  padding: 8px;
+  border: none;
+  background: #6f4e37;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.card-body button:hover {
+  background: #8b4513;
+}
+
+/* Floating Cart Button */
+.cart-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #6f4e37;
+  color: white;
+  padding: 14px 18px;
+  border-radius: 40px;
+  text-decoration: none;
+  font-weight: 500;
+  box-shadow: 0 6px 15px rgba(75, 46, 43, 0.3);
+  transition: 0.3s ease;
+}
+
+.cart-btn:hover {
+  background: #8b4513;
+}
+
+/* Responsive */
+@media (min-width: 768px) {
+  .menu {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ================= TOAST ================= */
+
+.toast {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%) translateY(20px);
+  background: #4b2e2b;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 50px;
+  font-size: 14px;
+  font-weight: 500;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s ease;
+  z-index: 999;
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* Success Style */
+.toast.success {
+  background: #6f4e37;
+}
+
+/* Remove Style */
+.toast.remove {
+  background: #b00020;
+}

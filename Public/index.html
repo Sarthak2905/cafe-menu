@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Moonlight Café</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+<header class="header">
+  <h1>Moonlight Café ☕</h1>
+  <p>Scan • Order • Relax</p>
+</header>
+
+<nav class="category">
+  <button class="active" onclick="filterMenu('all', this)">All</button>
+  <button onclick="filterMenu('coffee', this)">Coffee</button>
+  <button onclick="filterMenu('snacks', this)">Snacks</button>
+  <button onclick="filterMenu('dessert', this)">Dessert</button>
+</nav>
+
+<div class="search-box">
+  <input id="searchInput" placeholder="Search menu..." oninput="applyFilters()" />
+</div>
+
+<main id="menu" class="menu"></main>
+
+<a href="cart.html" class="cart-btn">🛒 View Cart</a>
+
+<!-- Toast Notification -->
+<div id="toast" class="toast">
+  <span id="toast-message">Item added to cart</span>
+</div>
+
+<script src="js/menu.js"></script>
+</body>
+</html>
