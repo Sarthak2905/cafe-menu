@@ -3,10 +3,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const billDiv = document.getElementById("bill");
   const totalEl = document.getElementById("total");
 
-  let cart = JSON.parse(sessionStorage.getItem("cart")) || [];
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
   function saveCart() {
-    sessionStorage.setItem("cart", JSON.stringify(cart));
+    localStorage.setItem("cart", JSON.stringify(cart));
   }
 
   function renderCart() {

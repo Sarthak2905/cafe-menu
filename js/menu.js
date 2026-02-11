@@ -17,11 +17,11 @@ const searchInput = document.getElementById("searchInput");
 let currentCategory = "all";
 
 function getCart() {
-  return JSON.parse(sessionStorage.getItem("cart")) || [];
+  return JSON.parse(localStorage.getItem("cart")) || [];
 }
 
 function saveCart(cart) {
-  sessionStorage.setItem("cart", JSON.stringify(cart));
+  localStorage.setItem("cart", JSON.stringify(cart));
 }
 
 function addToCart(item) {
